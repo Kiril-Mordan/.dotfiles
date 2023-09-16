@@ -1,6 +1,12 @@
 # Load direnv for Zsh
 eval "$(direnv hook zsh)"
 
+# Load environmental variables into .gitconfig
+git config --global user.name "$GIT_USER_NAME"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+
+# Prompt customization
 autoload -U colors && colors
 #PS1="[%{$fg[red]%}%m%{$reset_color%} %{$fg[yellow]%}%~ %{$reset_color%}]$ % "
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
