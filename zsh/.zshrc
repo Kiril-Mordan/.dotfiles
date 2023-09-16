@@ -1,3 +1,6 @@
+# Load direnv for Zsh
+eval "$(direnv hook zsh)"
+
 autoload -U colors && colors
 #PS1="[%{$fg[red]%}%m%{$reset_color%} %{$fg[yellow]%}%~ %{$reset_color%}]$ % "
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
