@@ -1,6 +1,6 @@
 [user]
-	name = Kiril-Mordan
-	email = kiril.mordan@icloud.com
+	name = REDACTED
+	email = REDACTED
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
