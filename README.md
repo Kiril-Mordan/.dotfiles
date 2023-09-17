@@ -6,7 +6,7 @@ hide sensitive information. Templated version of
 `.envrc` file, where all the necessary environmental 
 variables are suppose to be defined, is available and 
 like other files is being filtered with `.gitattributes`
-durring commiting.
+during commiting.
 
 ## Usage
 
