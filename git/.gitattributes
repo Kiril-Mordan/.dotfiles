@@ -1,0 +1,3 @@
+.gitconfig filter=clean
+.envrc filter=clean
+

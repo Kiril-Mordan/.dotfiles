@@ -1,5 +1,6 @@
 #!/bin/bash
-echo "Running clean filter for .gitconfig" >> logfile.txt
 
-sed "s/$GIT_USER_NAME/REDACTED/g" | sed "s/$GIT_AUTHOR_EMAIL/REDACTED/g"
+sed -e "s/$GIT_USER_NAME/GIT_USER_NAME/g" \
+    -e "s/$GIT_AUTHOR_EMAIL/GIT_AUTHOR_EMAIL/g" \
+    -e "s/$GIT_COMMITTER_EMAIL/GIT_COMMITTER_EMAIL/g"
 
