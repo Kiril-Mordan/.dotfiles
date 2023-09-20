@@ -19,6 +19,18 @@ fi
 curl -o miniconda_installer.sh "$MINICONDA_URL"
 bash miniconda_installer.sh -b -p "$MINICONDA_DIR"
 
+YAML_DIR="~/.dotfiles/conda/envs/"
+
+# Create and activate Conda environments from YAML files
+for yaml_file in "$YAML_DIR"/*.yml; do
+    if [ -f "$yaml_file" ]; then
+        env_name=$(basename "$yaml_file" .yml)
+        echo "Creating and activating Conda environment: $env_name"
+        conda env create -f "$yaml_file"
+        #conda activate "$env_name"
+    fi
+done
+
 # Provide instructions for additional environment setup and usage
 echo "Conda installation and environment setup complete."
 
