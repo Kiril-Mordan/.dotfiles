@@ -1,7 +1,14 @@
-#!/bin/bash
+i#!/bin/bash
 
 
 MINICONDA_DIR="$HOME/miniconda3"
+
+# Check if Miniconda is already installed
+if [ -d "$MINICONDA_DIR" ]; then
+    echo "Miniconda is already installed at $MINICONDA_DIR."
+    echo "Removing existing installation..."
+    rm -rf "$MINICONDA_DIR"
+fi
 
 # Determine the platform (Linux or macOS)
 if [[ $(uname) == "Linux" ]]; then
@@ -19,7 +26,7 @@ fi
 curl -o miniconda_installer.sh "$MINICONDA_URL"
 bash miniconda_installer.sh -b -p "$MINICONDA_DIR"
 
-YAML_DIR="~/.dotfiles/conda/envs/"
+YAML_DIR="$HOME/.dotfiles/conda/envs/"
 
 # Create and activate Conda environments from YAML files
 for yaml_file in "$YAML_DIR"/*.yml; do
@@ -27,7 +34,7 @@ for yaml_file in "$YAML_DIR"/*.yml; do
         env_name=$(basename "$yaml_file" .yml)
         echo "Creating and activating Conda environment: $env_name"
         conda env create -f "$yaml_file"
-        #conda activate "$env_name"
+        
     fi
 done
 
