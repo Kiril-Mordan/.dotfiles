@@ -12,13 +12,20 @@ during commiting.
 
 1. Define environmental varaibles in `.envrc` file
 
-2. Repopulate dotfiles with symlinks
+2. Use installation script
 
-   !!! Attention
- 
-   Script will overwrite existing files
+   !!! Attention: The following script will overwrite existing files
 
    ```
-   chmod +x repopulate_symlinks.sh
-   ./repopulate_symlinks.sh
+   chmod +x install.sh
+   ./install.sh
    ```
+
+   The script will:
+
+   - repopulate symlinks
+
+   - install conda and conda environments from `conda/envs/`
+
+
+

@@ -1,5 +1,3 @@
-i#!/bin/bash
-
 
 MINICONDA_DIR="$HOME/miniconda3"
 
